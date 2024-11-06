@@ -22,6 +22,14 @@ export default defineConfig({
 		starlight({
 			title: '帝国ドキュメント（仮設）',
 			favicon: '/favicon.png',
+			defaultLocale: 'root',
+			locales: {
+					root: {
+							lang: 'ja',
+							label: '日本語'
+					}
+			},
+			
 			plugins: [
 				starlightLinksValidator(),
 			],
