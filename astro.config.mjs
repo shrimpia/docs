@@ -4,25 +4,59 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	redirects: {
+		'/constitution': '/guidelines/tos',
+		'/note-guideline': '/guidelines/creating-note',
+		'/cp-guideline': '/guidelines/cp',
+		'/emoji-guideline': '/guidelines/emoji-request',
+		'/park-guideline': '/guidelines/discord',
+		'/avatars': '/hints/about-avatars',
+		'/club-guideline': '/guidelines/club',
+		'/hints': '/hints/roles',
+		'/hints-roles': '/hints/roles',
+		'/hints-report': '/hints/report-abuse',
+		'/shrimpia-plus': '/services/shrimpia-plus',
+	},
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: {
-				github: 'https://github.com/withastro/starlight',
+			title: '帝国ドキュメント（仮設）',
+			favicon: '/favicon.png',
+			logo: {
+				src: '@/assets/logo.png',
+				alt: 'シュリンピア',
+			},
+			customCss: [
+				'@/styles/global.scss',
+			],
+			components: {
+				Footer: '@/components/Footer.astro',
 			},
 			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+				{ 
+					label: 'サービス',
+					autogenerate: { directory: 'services' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: '帝国法規',
+					autogenerate: { directory: 'guidelines' },
 				},
+				{
+					label: 'ヒント',
+					autogenerate: { directory: 'hints' },
+				},
+				{
+					label: '世界観',
+					autogenerate: { directory: 'tales' },
+					badge: 'NEW',
+				}
 			],
 		}),
 	],
+	vite: {
+		resolve: {
+			alias: {
+				'@': '/src',
+			},
+		},
+	},
 });
