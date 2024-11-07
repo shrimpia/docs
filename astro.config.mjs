@@ -43,6 +43,9 @@ export default defineConfig({
 			components: {
 				Footer: '@/components/Footer.astro',
 			},
+			head: [
+				{ tag: 'link', attrs: { rel: 'stylesheet', href: 'https://koruri.chillout.chat/koruri.css' } },
+			],
 			sidebar: [
 				{ 
 					label: 'サービス',
