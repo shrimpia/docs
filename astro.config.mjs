@@ -58,8 +58,8 @@ export default defineConfig({
 				},
 				{
 					label: '世界観',
-					autogenerate: { directory: 'tales' },
 					badge: 'NEW',
+					autogenerate: { directory: 'tales' },
 				}
 			],
 		}),
