@@ -41,6 +41,8 @@ export default defineConfig({
 				'@/styles/global.scss',
 			],
 			components: {
+				Head: '@/components/Head.astro',
+				PageFrame: '@/components/PageFrame.astro',
 				Footer: '@/components/Footer.astro',
 			},
 			head: [
