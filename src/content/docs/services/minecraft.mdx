@@ -1,0 +1,45 @@
+---
+title: Minecraft
+description: Shrimpia Minecraftで生活しよう。
+sidebar:
+  badge: NEW
+---
+import { LinkCard, CardGrid, LinkButton } from '@astrojs/starlight/components';
+
+シュリンピア帝国公式Minecraftサーバーで遊びましょう。
+
+参加には、シュリンピア帝国Misskeyのアカウントが必要です。
+
+<LinkButton href="/minecraft/getting-started" variant="primary" icon="rocket" iconPlacement="end">
+  はじめる
+</LinkButton>
+<LinkButton href="http://mc.shrimpia.network:25575" variant="secondary" icon="external" target="_blank" rel="noopener noreferrer" iconPlacement="end">
+  ワールドマップ
+</LinkButton>
+
+<CardGrid>
+  <LinkCard
+    title="ルール"
+    description="あそぶ前に、かならず確認！"
+    href="/minecraft/rules"
+    />
+  <LinkCard
+    title="FAQ"
+    description="わからないことは、るちかへ"
+    href="/minecraft/faq"
+    />
+  <LinkCard
+    title="ワールド"
+    description="各ワールドのあそびかた"
+    href="/minecraft/worlds"
+    />
+  <LinkCard
+    title="コマンド"
+    description="使いこなして、上流のエビになろう"
+    href="/minecraft/commands"
+    />
+</CardGrid>
+
+その他、サイドバーのMinecraftカテゴリーにどんどん情報を追加していきます！
+
+---

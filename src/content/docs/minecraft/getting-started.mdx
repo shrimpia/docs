@@ -1,0 +1,81 @@
+---
+title: 参加方法
+description: サーバーへの参加方法について説明します。
+sidebar:
+  order: 1
+---
+import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+
+お使いのエディションの説明を選択して、ステップに従ってください。
+
+お使いのエディションがわからない場合は、タイトル画面にあるロゴをご確認ください。
+「**Java Edition**」とあればJava Edition、なければBedrock Editionです。たぶん。
+<Tabs>
+  <TabItem label="Java">
+    <Steps>
+      1. Minecraft 1.21.4 を起動します。
+      2. 「マルチプレイ」を選択します。
+        ![](@/assets/mc/java-1.png)
+      3. 「サーバーを追加」を選択します。
+        ![](@/assets/mc/java-2.png)
+      4. サーバーアドレスに `play.shrimpia.network` を入力し、「完了」を選択します。サーバー名はお好みで。
+        ![](@/assets/mc/java-3.png)
+      5. サーバーを選択して「接続」を選択します。
+        ![](@/assets/mc/java-4.png)
+      6. 初回接続時は未認証のため、弾かれます。このときのコードをメモしてください。
+        ![](@/assets/mc/java-5.png)
+      7. [シュリンピアポータル](https://portal.shrimpia.network) にログインしてください。
+      8. [Shrimpia Minecraft](https://portal.shrimpia.network/minecraft-auth)を選択して遷移します。
+      9. メモしたコードを入力し、認証を完了します。
+        ![](@/assets/mc/java-6.png)
+      10. 成功したら、再度サーバーに接続してください。
+      11. 参加できたら、ゲームをお楽しみください！
+    </Steps>
+  </TabItem>
+  <TabItem label="Bedrock">
+    :::tip[ゲーム機をお使いの方へ]
+    Xbox, Playstation, Nintendo Switch などのゲーム機に対応したMinecraftは、外部サーバーへの接続ができないよう制限されているため、そのままではご参加いただけません。
+
+    ただし、Bedrock Connectというサービスを介することで、接続できます。詳しくは[こちら](/minecraft/bedrock-connect)をご覧ください。
+    :::
+    <Steps>
+      1. Minecraft アプリがアップデート済みであることを確認します。
+      2. Minecraft を起動し、「プレイ」を選択します。
+        ![](@/assets/mc/be-1.png)
+      3. 「サーバー」タブを選択し、一番下までスクロールし、[サーバーを追加]を選択します。
+        ![](@/assets/mc/be-3.png)
+      4. このような画面が出てもそのまま進んでください。
+        ![](@/assets/mc/be-2.png)
+      5. 以下のように入力し、保存してください。
+          <table>
+            <tr>
+              <th>項目</th>
+              <th>入力内容</th>
+            </tr>
+            <tr>
+              <td>サーバー名</td>
+              <td>お好みで</td>
+            </tr>
+            <tr>
+              <td>サーバーアドレス</td>
+              <td>mc.shrimpia.network</td>
+            </tr>
+            <tr>
+              <td>ポート</td>
+              <td>25565</td>
+            </tr>
+          </table>
+          ![](@/assets/mc/be-4.png)
+      6. 保存したサーバーを選択し、接続してください。
+      7. リソースパックのダウンロードを求められた場合は、ダウンロードしてください。
+      8. 初回接続時は未認証のため、弾かれます。このときのコードをメモしてください。
+        ![](@/assets/mc/be-5.png)
+      9. [シュリンピアポータル](https://portal.shrimpia.network) にログインしてください。
+      10. [Shrimpia Minecraft](https://portal.shrimpia.network/minecraft-auth)を選択して遷移します。
+      11. メモしたコードを入力し、認証を完了します。
+        ![](@/assets/mc/java-6.png)
+      12. 成功したら、再度サーバーに接続してください。
+      13. 参加できたら、ゲームをお楽しみください！
+    </Steps>
+  </TabItem>
+</Tabs>

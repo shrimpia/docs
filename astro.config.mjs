@@ -63,9 +63,13 @@ export default defineConfig({
 				},
 				{
 					label: '世界観',
-					badge: 'NEW',
 					autogenerate: { directory: 'tales' },
-				}
+				},
+				{
+					label: 'Minecraft',
+					badge: 'NEW',
+					autogenerate: { directory: 'minecraft' },
+				},
 			],
 		}),
 	],
