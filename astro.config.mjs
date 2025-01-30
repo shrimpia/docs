@@ -62,13 +62,28 @@ export default defineConfig({
 					autogenerate: { directory: 'hints' },
 				},
 				{
-					label: '世界観',
-					autogenerate: { directory: 'tales' },
-				},
-				{
 					label: 'Minecraft',
 					badge: 'NEW',
-					autogenerate: { directory: 'minecraft' },
+					items: [{
+						label: "参加方法",
+						link: "/minecraft/getting-started",
+					}, {
+						label: "サーバールール",
+						link: "/minecraft/rules",
+					}, {
+						label: "ワールド解説",
+						link: "/minecraft/worlds",
+					}, {
+						label: "Tips",
+						link: "/minecraft/tips",
+					}, {
+						label: "プラグイン",
+						autogenerate: { directory: 'minecraft/plugins' },
+					}],
+				},
+				{
+					label: '世界観',
+					autogenerate: { directory: 'tales' },
 				},
 			],
 		}),

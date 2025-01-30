@@ -1,7 +1,7 @@
 ---
 import MobileMenuToggle from '@astrojs/starlight/components/MobileMenuToggle.astro';
 import type { Props } from '@astrojs/starlight/props';
-import { slide } from 'astro:transitions';
+import { fade, slide } from 'astro:transitions';
 
 const { hasSidebar } = Astro.props;
 ---
@@ -20,7 +20,7 @@ const { hasSidebar } = Astro.props;
 			</nav>
 		)
 	}
-	<div class="main-frame" transition:animate={slide({duration: '0.5s'})}><slot /></div>
+	<div class="main-frame" transition:animate={fade({duration: '0.5s'})}><slot /></div>
 </div>
 
 <style>
