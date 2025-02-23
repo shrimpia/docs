@@ -1,64 +1,51 @@
 ---
 title: Shrimpia+
-description: Shrimpia+ に参加し、Shrimpia Networkの活動を支援しましょう。
+description: Shrimpia+ に参加し、シュリンピア帝国の運営を支援しましょう。
 ---
-import Stub from '@/components/stub.md';
+import { LinkButton } from '@astrojs/starlight/components';
+import ShrimpiaPlusHeroContainer from '@/components/ShrimpiaPlusHeroContainer.astro'
+import ShrimpiaPlusHero from '@/components/ShrimpiaPlusHero.astro'
 
-<Stub />
+Shrimpia+ に参加し、シュリンピア帝国の運営を支援しましょう。ご支援頂いた方にはうれしい特典があります！
 
-Shrimpia+ に参加し、Shrimpia Networkの活動を支援しましょう。
+<LinkButton href="https://shrimpia.fanbox.cc/">Shrimpia+に参加</LinkButton>
 
-ご支援頂いた方には、シュリンピア帝国でのうれしい特典があります！
+<ShrimpiaPlusHeroContainer>
+    <ShrimpiaPlusHero
+        title="Shrimpia+ Lite"
+        description="お試しに最適。ちょっと嬉しい特典付き。"
+        background="#ffd7d7"
+        foreground="#b93e43"
+        />
+    <ShrimpiaPlusHero
+        title="Shrimpia+"
+        description="おすすめのプラン。必要なものが揃います。"
+        recommended
+        background="#b93e43"
+        foreground="white"
+        />
+    <ShrimpiaPlusHero
+        title="Shrimpia+ Pro"
+        description="奮発してくれる方へ。最上級の生活をお届けします。"
+        background="#372b35"
+        foreground="white"
+        />
+</ShrimpiaPlusHeroContainer>
 
-<aside>
-✨ **Shrimpia+ Lite**
 
-お試しに最適。
-ちょっと嬉しい
-特典付き。
-
-</aside>
-
-<aside>
-💎 **Shrimpia+ `推奨`**
-
-おすすめのプラン。
-必要なものが
-揃います。
-
-</aside>
-
-<aside>
-👑 **Shrimpia+ Pro**
-
-奮発してくれる方へ。最上級の生活を
-お届けします。
-
-</aside>
-
-#### Shrimpia+への参加は、pixivFANBOXにて承ります！
-
-[Shrimpia｜pixivFANBOX](https://shrimpia.fanbox.cc/)
-
-参加後、特典を受け取るために、以下の手順でファンカードを送信してください。
-
+## 特典の受け取り方
+Shrimpia+に参加したら、その旨を以下の方法でお知らせください！特典のロールをお渡しします。
 ![Untitled](@/assets/shrimpia-plus.png)
 
 ### プランの比較
-
-#### 共通
-
-|  | 非参加 | **Plus Lite** | **Plus `推奨`** | **Plus Pro** |
-| --- | --- | --- | --- | --- |
-| **月額** | 0円 | **200円** | **500円** | **1500円** |
-| **バッジ** | ❌ | ⭕ | ⭕ | ⭕ |
 
 #### Misskeyサーバー
 
 |  | 非参加 | **Plus Lite** | **Plus `推奨`** | **Plus Pro** |
 | --- | --- | --- | --- | --- |
-| **グローバルタイムライン** | ❌ | ⭕ | **⭕** | ⭕ |
-| **ノート検索** | ❌ | ❌ | **⭕** | ⭕ |
+| **バッジ** | なし | **あり** | **あり** | **あり** |
+| **グローバルタイムライン** | なし | **あり** | **あり** | **あり** |
+| **ノート検索** | なし | なし | **あり** | **あり** |
 | **ドライブ容量** | 2GB | **5GB** | **20GB** | **100GB** |
 | **クリップ最大数** | 10 | 10 | **50** | **100** |
 | **WebHook最大数** | 1 | 1 | **10** | **30** |
@@ -71,7 +58,8 @@ Shrimpia+ に参加し、Shrimpia Networkの活動を支援しましょう。
 | **リスト内のユーザー最大数** | 50 | 50 | **100** | **500** |
 | **レートリミット** | 通常 | 通常 | **70%に緩和** | **50%に緩和** |
 | **絵文字の申請枠** | 0 | 1 | **2** | **5** |
-| **アイコンデコ最大数** | 1 | 1 | 3 | **5** |
+| **アイコンデコ最大数** | 1 | 1 | **3** | **5** |
+| 収支報告の内訳を閲覧 | なし | **あり** | **あり** | **あり** |
 
 #### Discordサーバー
 

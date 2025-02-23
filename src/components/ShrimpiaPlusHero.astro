@@ -1,0 +1,52 @@
+---
+export type Props = {
+    title: string;
+    description: string;
+    recommended?: boolean;
+    background?: string;
+    foreground?: string;
+};
+
+const { title, description, recommended, background, foreground } = Astro.props;
+---
+
+
+<div class={`hero ${recommended ? 'recommended' : ''}`} style={`background-color: ${background ?? 'transparent'}; color: ${foreground ?? 'black'}`}>
+    <h1>{title}</h1>
+    <p>{description}</p>
+</div>
+
+<style lang="scss">
+    .hero {
+        position: relative;
+        margin-top: 0;
+        padding: 10px;
+        border-radius: 6px;
+        > h1 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: inherit;
+        }
+    }
+
+    .hero.recommended {
+        border: 2px solid #B93E43;
+        &::after {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            content: "推奨";
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    }
+</style>
+
+<style is:global>
+    .hero-container > .hero {
+        margin-top: 0;
+    }
+</style>
