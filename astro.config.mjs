@@ -20,7 +20,7 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
-			title: '帝国ドキュメント（仮設）',
+			title: '帝国ドキュメント',
 			favicon: '/favicon.png',
 			defaultLocale: 'root',
 			locales: {
