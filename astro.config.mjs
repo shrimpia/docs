@@ -20,7 +20,7 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
-			title: '帝国ドキュメント',
+			title: 'シュリンピアドキュメント',
 			favicon: '/favicon.png',
 			defaultLocale: 'root',
 			locales: {
@@ -54,7 +54,7 @@ export default defineConfig({
 					autogenerate: { directory: 'services' },
 				},
 				{
-					label: '帝国法規',
+					label: '規約・ガイドライン',
 					autogenerate: { directory: 'guidelines' },
 				},
 				{
