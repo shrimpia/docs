@@ -4,10 +4,6 @@ description: 投稿を作成する際のガイドラインです。
 sidebar:
   order: 2
 ---
-import Stub from '@/components/stub.md';
-
-<Stub />
-
 投稿を作成する場合、このガイドラインに必ず従ってください。
 
 本ガイドラインに反する投稿があった場合、警告の上、一律削除します。
