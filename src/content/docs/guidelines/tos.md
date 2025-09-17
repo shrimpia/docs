@@ -202,5 +202,5 @@ Shrimpia Networkが運営するMisskeyサーバー「シュリンピア」（以
   - [Discord利用ルール](/guidelines/discord) を遵守してください。
   - また、Discordの利用規約に従ってください。
 - Minecraftサーバーについて
-  - [Minecraft利用ルール](/minecraft/rules) を遵守してください。
+  - [Minecraft利用ルール](/guidelines/minecraft) を遵守してください。
 
