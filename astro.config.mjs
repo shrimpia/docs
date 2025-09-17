@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightLinksValidator from 'starlight-links-validator';
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,7 +19,7 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
-			title: '帝国ドキュメント',
+			title: 'シュリンピアドキュメント',
 			favicon: '/favicon.png',
 			defaultLocale: 'root',
 			locales: {
@@ -29,10 +28,6 @@ export default defineConfig({
 							label: '日本語'
 					}
 			},
-			
-			plugins: [
-				starlightLinksValidator(),
-			],
 			logo: {
 				src: '@/assets/logo.png',
 				alt: 'シュリンピア',
@@ -42,20 +37,19 @@ export default defineConfig({
 			],
 			components: {
 				Head: '@/components/Head.astro',
-				PageFrame: '@/components/PageFrame.astro',
 				Footer: '@/components/Footer.astro',
 			},
 			head: [
 				{ tag: 'link', attrs: { rel: 'stylesheet', href: 'https://koruri.chillout.chat/koruri.css' } },
 			],
 			sidebar: [
+				{
+					label: '規約・ガイドライン',
+					autogenerate: { directory: 'guidelines' },
+				},
 				{ 
 					label: 'サービス',
 					autogenerate: { directory: 'services' },
-				},
-				{
-					label: '帝国法規',
-					autogenerate: { directory: 'guidelines' },
 				},
 				{
 					label: 'ヒント',
@@ -68,8 +62,8 @@ export default defineConfig({
 						label: "参加方法",
 						link: "/minecraft/getting-started",
 					}, {
-						label: "サーバールール",
-						link: "/minecraft/rules",
+						label: "ルール",
+						link: "/guidelines/minecraft",
 					}, {
 						label: "ワールド解説",
 						link: "/minecraft/worlds",
