@@ -75,10 +75,6 @@ export default defineConfig({
 						autogenerate: { directory: 'minecraft/plugins' },
 					}],
 				},
-				{
-					label: '世界観',
-					autogenerate: { directory: 'tales' },
-				},
 			],
 		}),
 	],
