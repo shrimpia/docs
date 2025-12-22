@@ -55,26 +55,26 @@ export default defineConfig({
 					label: 'ヒント',
 					autogenerate: { directory: 'hints' },
 				},
-				{
-					label: 'Minecraft',
-					badge: 'NEW',
-					items: [{
-						label: "参加方法",
-						link: "/minecraft/getting-started",
-					}, {
-						label: "ルール",
-						link: "/guidelines/minecraft",
-					}, {
-						label: "ワールド解説",
-						link: "/minecraft/worlds",
-					}, {
-						label: "Tips",
-						link: "/minecraft/tips",
-					}, {
-						label: "プラグイン",
-						autogenerate: { directory: 'minecraft/plugins' },
-					}],
-				},
+				// {
+				// 	label: 'Minecraft',
+				// 	badge: 'NEW',
+				// 	items: [{
+				// 		label: "参加方法",
+				// 		link: "/minecraft/getting-started",
+				// 	}, {
+				// 		label: "ルール",
+				// 		link: "/guidelines/minecraft",
+				// 	}, {
+				// 		label: "ワールド解説",
+				// 		link: "/minecraft/worlds",
+				// 	}, {
+				// 		label: "Tips",
+				// 		link: "/minecraft/tips",
+				// 	}, {
+				// 		label: "プラグイン",
+				// 		autogenerate: { directory: 'minecraft/plugins' },
+				// 	}],
+				// },
 			],
 		}),
 	],
