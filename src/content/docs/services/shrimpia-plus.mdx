@@ -2,39 +2,40 @@
 title: Shrimpia+
 description: Shrimpia+ に参加し、Shrimpia Networkを支援しましょう。
 ---
-import { LinkButton } from '@astrojs/starlight/components';
-import ShrimpiaPlusHeroContainer from '@/components/ShrimpiaPlusHeroContainer.astro'
-import ShrimpiaPlusHero from '@/components/ShrimpiaPlusHero.astro'
-import { Badge } from '@astrojs/starlight/components';
+
+import { LinkButton } from "@astrojs/starlight/components";
+import ShrimpiaPlusHeroContainer from "@/components/ShrimpiaPlusHeroContainer.astro";
+import ShrimpiaPlusHero from "@/components/ShrimpiaPlusHero.astro";
+import { Badge } from "@astrojs/starlight/components";
 
 Shrimpia+ に参加し、Shrimpia Networkを運営を支援しましょう。ご支援頂いた方にはうれしい特典があります！
 
 <LinkButton href="https://shrimpia.fanbox.cc/">Shrimpia+に参加</LinkButton>
 
 <ShrimpiaPlusHeroContainer>
-    <ShrimpiaPlusHero
-        title="Shrimpia+ Lite"
-        description="お試しに最適。ちょっと嬉しい特典付き。"
-        background="#ffd7d7"
-        foreground="#b93e43"
-        />
-    <ShrimpiaPlusHero
-        title="Shrimpia+"
-        description="おすすめのプラン。必要なものが揃います。"
-        recommended
-        background="#b93e43"
-        foreground="white"
-        />
-    <ShrimpiaPlusHero
-        title="Shrimpia+ Pro"
-        description="奮発してくれる方へ。最上級の生活をお届けします。"
-        background="#372b35"
-        foreground="white"
-        />
+  <ShrimpiaPlusHero
+    title="Shrimpia+ Lite"
+    description="お試しに最適。ちょっと嬉しい特典付き。"
+    background="#ffd7d7"
+    foreground="#b93e43"
+  />
+  <ShrimpiaPlusHero
+    title="Shrimpia+"
+    description="おすすめのプラン。必要なものが揃います。"
+    recommended
+    background="#b93e43"
+    foreground="white"
+  />
+  <ShrimpiaPlusHero
+    title="Shrimpia+ Pro"
+    description="奮発してくれる方へ。最上級の生活をお届けします。"
+    background="#372b35"
+    foreground="white"
+  />
 </ShrimpiaPlusHeroContainer>
 
-
 ## 特典の受け取り方
+
 Shrimpia+に参加したら、その旨を以下の方法でお知らせください！特典のロールをお渡しします。
 ![Untitled](@/assets/shrimpia-plus.png)
 
@@ -42,38 +43,32 @@ Shrimpia+に参加したら、その旨を以下の方法でお知らせくだ�
 
 #### Misskeyサーバー
 
-|  | 非参加 | **Plus Lite** | **Plus <Badge text="推奨" variant="success"/>** | **Plus Pro** |
-| --- | --- | --- | --- | --- |
-| **バッジ** | なし | **あり** | **あり** | **あり** |
-| **グローバルタイムライン** | なし | **あり** | **あり** | **あり** |
-| **ノート検索** | あり | あり | あり | あり |
-| **ドライブ容量** | 10GB | **20GB** | **50GB** | **150GB** |
-| **クリップ最大数** | 10 | 10 | **50** | **100** |
-| **WebHook最大数** | 1 | 1 | **10** | **30** |
-| **ノートのピン留め最大数** | 5 | 5 | **10** | **15** |
-| **アンテナ最大数** | 5 | 5 | **20** | **30** |
-| **ワードミュート最大文字数** | 300 | 300 | **750** | **1000** |
-| **クリップの作成可能数** | 10 | 10 | **50** | **100** |
-| **クリップ内のノート最大数** | 200 | 200 | **500** | **1000** |
-| **ユーザーリスト最大数** | 10 | 10 | **20** | **50** |
-| **リスト内のユーザー最大数** | 50 | 50 | **100** | **500** |
-| **レートリミット** | 通常 | 通常 | **70%に緩和** | **50%に緩和** |
-| **アバターデコ最大装着数** | 1 | **2** | **4** | **6** |
-| **ファイルアップロード上限** | 10MB/20MB<sup>*1</sup> | **40MB** | **100MB** | **2GB** |
+|                              | 非参加                  | **Plus Lite** | **Plus <Badge text="推奨" variant="success"/>** | **Plus Pro**  |
+| ---------------------------- | ----------------------- | ------------- | ----------------------------------------------- | ------------- |
+| **バッジ**                   | なし                    | **あり**      | **あり**                                        | **あり**      |
+| **グローバルタイムライン**   | なし                    | **あり**      | **あり**                                        | **あり**      |
+| **ノート検索**               | あり                    | あり          | あり                                            | あり          |
+| **ドライブ容量**             | 10GB                    | **20GB**      | **50GB**                                        | **150GB**     |
+| **クリップ最大数**           | 10                      | 10            | **50**                                          | **100**       |
+| **WebHook最大数**            | 1                       | 1             | **10**                                          | **30**        |
+| **ノートのピン留め最大数**   | 5                       | 5             | **10**                                          | **15**        |
+| **アンテナ最大数**           | 5                       | 5             | **20**                                          | **30**        |
+| **ワードミュート最大文字数** | 300                     | 300           | **750**                                         | **1000**      |
+| **クリップの作成可能数**     | 10                      | 10            | **50**                                          | **100**       |
+| **クリップ内のノート最大数** | 200                     | 200           | **500**                                         | **1000**      |
+| **ユーザーリスト最大数**     | 10                      | 10            | **20**                                          | **50**        |
+| **リスト内のユーザー最大数** | 50                      | 50            | **100**                                         | **500**       |
+| **レートリミット**           | 通常                    | 通常          | **70%に緩和**                                   | **50%に緩和** |
+| **アバターデコ最大装着数**   | 1                       | **2**         | **4**                                           | **6**         |
+| **ファイルアップロード上限** | 10MB/20MB<sup>\*1</sup> | **40MB**      | **100MB**                                       | **2GB**       |
 | **予約投稿の最大数** | 0 | **1** | **1** | **1** |
 
-*1: シュリンピアンロール（投稿数100を達成）したユーザーは、20MBまでアップロード可能です。<br/>
+\*1: シュリンピアンロール（投稿数100を達成）したユーザーは、20MBまでアップロード可能です。<br/>
 
 #### シュリンピアポータル
 
-|  | 非参加 | **Plus Lite** | **Plus `推奨`** | **Plus Pro** |
-| --- | --- | --- | --- | --- |
-| **絵文字の申請枠** | 0 | **1** | **2** | **5** |
-| **アイコンデコ申請枠** | 0 | 0 | **2** | **4** |
-| **絵文字インポート申請枠** <sup>*2</sup> <sup>*3</sup> | 検討中 | 検討中 | 検討中 | 検討中 |
-
-- *2: 開発中
-- *3: 絵文字の申請とは別枠になります。こちらの場合は、却下されたとしても枠は消費されます。
+|                        | 非参加 | **Plus Lite** | **Plus `推奨`** | **Plus Pro** |
+| ---------------------- | ------ | ------------- | --------------- | ------------ |
 
 #### Discordサーバー
 
@@ -82,19 +77,13 @@ Shrimpia+に参加したら、その旨を以下の方法でお知らせくだ�
 
 </aside>
 
-|  | 非参加 | Plus Lite | Plus `推奨` | Plus Pro |
-| --- | --- | --- | --- | --- |
-
-#### その他
-
-|  | 非参加 | **Plus Lite** | **Plus `推奨`** | **Plus Pro** |
-| --- | --- | --- | --- | --- |
-| **収支報告の内訳を閲覧** | なし | **あり** | **あり** | **あり** |
+|     | 非参加 | Plus Lite | Plus `推奨` | Plus Pro |
+| --- | ------ | --------- | ----------- | -------- |
 
 ### 免責事項
 
 - Shrimpia+加入者であっても、サーバールール違反による処罰は免除されません。
-    - サブスクリプションの払い戻しはできませんので、ご自身で解除いただくようお願いします。
+  - サブスクリプションの払い戻しはできませんので、ご自身で解除いただくようお願いします。
 - 加入状況は手動更新のため、反映が遅れる可能性があります。
-    - 反映を急ぐ場合は、お手数ですが @Lutica 宛にDMでご連絡ください。
+  - 反映を急ぐ場合は、お手数ですが @Lutica 宛にDMでご連絡ください。
 - Shrimpia+ の特典については、事前の予告なく変更されることがあります。
