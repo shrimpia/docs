@@ -69,6 +69,9 @@ export default defineConfig({
 					}, {
 						label: "部活動ガイドライン",
 						link: "/guidelines/club",
+					}, {
+						label: "更新履歴",
+						link: "/guidelines/changelog",
 					}],
 				},
 				{ 
