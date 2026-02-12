@@ -45,7 +45,31 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: '規約・ガイドライン',
-					autogenerate: { directory: 'guidelines' },
+					items: [{
+						label: "サーバールール",
+						link: "/guidelines/tos",
+					}, {
+						label: "ローカルタイムラインルール",
+						link: "/guidelines/ltl",
+					}, {
+						label: "投稿ガイドライン",
+						link: "/guidelines/creating-note",
+					}, {
+						label: "カップリング作品に関するガイドライン",
+						link: "/guidelines/cp",
+					}, {
+						label: "Discord利用ルール",
+						link: "/guidelines/discord",
+					}, {
+						label: "絵文字申請ガイドライン",
+						link: "/guidelines/emoji-request",
+					}, {
+						label: "アバターデコレーション申請ガイドライン",
+						link: "/guidelines/avatar-decoration-guideline",
+					}, {
+						label: "部活動ガイドライン",
+						link: "/guidelines/club",
+					}],
 				},
 				{ 
 					label: 'サービス',
