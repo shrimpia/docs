@@ -1,58 +1,371 @@
-/* Dark mode colors. */
-:root {
-	--sl-color-accent-low: #871429;
-	--sl-color-accent: #F24149;
-	--sl-color-accent-high: #F24149;
-	--sl-color-white: #ffffff;
-	--sl-color-gray-1: #f3ecea;
-	--sl-color-gray-2: #c8c0be;
-	--sl-color-gray-3: #978784;
-	--sl-color-gray-4: #635451;
-	--sl-color-gray-5: #423432;
-	--sl-color-gray-6: #302321;
-	--sl-color-black: #1d1715;
+// Lutica Design System を Starlight に当てはめるテーマ。
+// DS 本体は lutica/ に置き、ここには Starlight との対応付けだけを書く。
 
-  --sl-font: 'Koruri', sans-serif;
-}
-/* Light mode colors. */
-:root[data-theme='light'] {
-	--sl-color-accent-low: #ffe5e4;
-	--sl-color-accent: #F24149;
-	--sl-color-accent-high: #871429;
-	--sl-color-white: #1d1715;
-	--sl-color-gray-1: #302321;
-	--sl-color-gray-2: #423432;
-	--sl-color-gray-3: #635451;
-	--sl-color-gray-4: #978784;
-	--sl-color-gray-5: #c8c0be;
-	--sl-color-gray-6: #f3ecea;
-	--sl-color-gray-7: #f9f5f5;
-	--sl-color-black: #ffffff;
-}
+// ---------- Starlight の変数と DS トークンの対応 ----------
+// トークンが data-theme で切り替わるため、ライトとダークで同じ対応を使える。
+// 印刷時は Starlight の print.css の配色に任せるため、色は画面表示に限定する。
+@media screen {
+	:root,
+	::backdrop {
+		--sl-color-white: var(--foreground-strong);
+		--sl-color-gray-1: var(--foreground);
+		--sl-color-gray-2: var(--foreground);
+		--sl-color-gray-3: var(--dimmed);
+		--sl-color-gray-4: var(--border);
+		--sl-color-gray-5: var(--divider);
+		--sl-color-gray-6: var(--panel);
+		--sl-color-gray-7: var(--panel);
+		--sl-color-black: var(--background);
 
-html {
-  font-size: 16px;
-}
+		--sl-color-accent-low: color-mix(in oklab, var(--primary) 20%, var(--background));
+		--sl-color-accent: var(--primary);
+		--sl-color-accent-high: var(--primary);
 
-@media (min-width: 50em) {
-	:root {
-		--sl-text-h1: var(--sl-text-4xl);
-		--sl-text-h2: var(--sl-text-3xl);
-		--sl-text-h3: var(--sl-text-2xl);
-		--sl-text-h4: var(--sl-text-xl);
+		--sl-color-text: var(--foreground);
+		--sl-color-text-accent: var(--link);
+		--sl-color-text-invert: var(--primary-fg);
+		--sl-color-bg: var(--background);
+		--sl-color-bg-nav: var(--panel);
+		--sl-color-bg-sidebar: var(--background);
+		--sl-color-bg-inline-code: color-mix(in oklab, var(--foreground) 8%, transparent);
+		--sl-color-bg-accent: var(--primary-bg);
+		--sl-color-hairline-light: var(--divider);
+		--sl-color-hairline: var(--divider);
+		--sl-color-hairline-shade: var(--divider);
+		--sl-color-backdrop-overlay: color-mix(in oklab, var(--background) 60%, transparent);
+
+		--sl-shadow-sm: var(--shadow-sm);
+		--sl-shadow-md: var(--shadow-md);
+		--sl-shadow-lg: var(--shadow-lg);
 	}
 }
 
+:root,
+::backdrop {
+	--sl-font: var(--font-sans);
+	--sl-font-mono: var(--font-mono);
+	--sl-text-h1: var(--text-h1);
+	--sl-text-h2: var(--text-h2);
+	--sl-text-h3: var(--text-h3);
+	--sl-text-h4: var(--text-h4);
+	--sl-text-h5: var(--text-h5);
+	--sl-text-h6: var(--text-h6);
+	--sl-line-height: 2;
+	--sl-line-height-headings: 1.5;
+
+	--sl-nav-height: var(--size-navbar);
+	// カードの左右余白のぶんだけ広げ、本文の行長を保つ。
+	--sl-content-width: 49rem;
+
+	--sl-badge-default-bg: var(--primary-bg);
+	--sl-badge-default-text: var(--primary-fg);
+	--sl-badge-note-bg: var(--dimmed-bg);
+	--sl-badge-note-text: var(--dimmed-fg);
+	--sl-badge-danger-bg: var(--danger-bg);
+	--sl-badge-danger-text: var(--danger-fg);
+	--sl-badge-success-bg: var(--success-bg);
+	--sl-badge-success-text: var(--success-fg);
+	--sl-badge-caution-bg: var(--warning-bg);
+	--sl-badge-caution-text: var(--warning-fg);
+	--sl-badge-tip-bg: var(--primary-bg);
+	--sl-badge-tip-text: var(--primary-fg);
+}
+
+html {
+	font-size: 16px;
+}
+
+// ---------- ヘッダー（Navbar 相当） ----------
+header.header {
+	border-bottom: none;
+	background: color-mix(in oklab, var(--panel) 72%, transparent);
+	-webkit-backdrop-filter: blur(16px) saturate(1.4);
+	backdrop-filter: blur(16px) saturate(1.4);
+	box-shadow: var(--shadow-lg);
+
+	@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+		background: var(--panel);
+	}
+	@media (prefers-reduced-transparency: reduce) {
+		background: var(--panel);
+	}
+}
+
+.site-title {
+	color: var(--foreground-strong);
+	font-size: var(--text-body);
+	font-weight: 700;
+}
+
+// ---------- 押せる部品 ----------
+@media (min-width: 50rem) {
+	button[data-open-modal] {
+		height: var(--size-control-sm);
+		border: none;
+		border-radius: var(--radius-md);
+		background: var(--panel-button);
+		box-shadow: var(--shadow-control);
+		color: var(--foreground);
+		transition: background-color var(--lu-duration) ease-out;
+
+		&:hover {
+			background: color-mix(in oklab, var(--panel-button) 94%, var(--foreground));
+			color: var(--foreground-strong);
+		}
+		&:active {
+			box-shadow: none;
+			translate: 0 1px;
+		}
+		> kbd {
+			background: var(--panel);
+		}
+	}
+}
+
+.sl-menu-button,
+[data-theme='light'] .sl-menu-button {
+	border-radius: var(--radius-md);
+	background-color: var(--panel-button);
+	box-shadow: var(--shadow-control);
+	color: var(--foreground);
+
+	&:has(~ :popover-open) {
+		background-color: var(--primary-bg);
+		box-shadow: none;
+		color: var(--primary-fg);
+	}
+}
+
+.sl-link-button {
+	min-height: var(--size-control);
+	padding: 0 var(--space-4);
+	border: none;
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-control);
+	font-size: var(--text-ui);
+	font-weight: 600;
+	line-height: 1;
+	transition: background-color var(--lu-duration) ease-out;
+
+	&:active {
+		box-shadow: none;
+		translate: 0 1px;
+	}
+
+	&.primary,
+	&.primary:hover {
+		color: var(--primary-fg);
+	}
+	&.primary {
+		background: var(--primary-bg);
+	}
+	&.primary:hover {
+		background: color-mix(in oklab, var(--primary-bg) 88%, var(--foreground));
+	}
+
+	&.secondary,
+	&.secondary:hover {
+		color: var(--foreground);
+	}
+	&.secondary {
+		background: var(--panel-button);
+	}
+	&.secondary:hover {
+		background: color-mix(in oklab, var(--panel-button) 94%, var(--foreground));
+	}
+
+	&.minimal,
+	&.minimal:hover {
+		box-shadow: none;
+		color: var(--link);
+	}
+	&.minimal {
+		padding-inline: var(--space-4);
+	}
+	&.minimal:hover {
+		background: color-mix(in oklab, var(--primary) 10%, transparent);
+	}
+}
+
+// ---------- サイドバー ----------
+.sidebar-content a {
+	border-radius: var(--radius-md);
+	transition: background-color var(--lu-duration) ease-out;
+
+	&:hover:not([aria-current='page']) {
+		background: color-mix(in oklab, var(--foreground) 8%, transparent);
+	}
+	&[aria-current='page'] {
+		background: var(--primary-bg);
+		box-shadow: var(--shadow-control);
+		color: var(--primary-fg);
+	}
+}
+
+// ---------- 検索ダイアログ ----------
+site-search dialog {
+	border: none;
+	background: var(--panel-raised);
+	box-shadow: var(--shadow-lg);
+
+	@media (min-width: 50rem) {
+		border-radius: var(--radius-lg);
+	}
+}
+
+// ---------- 記事 ----------
+.content-panel + .content-panel {
+	border-top: none;
+}
+
+.sl-markdown-content {
+	// Starlight は見出しを inline にして .sl-heading-wrapper で包むため、
+	// DS が見出しに付ける余白と線はラッパー側へ移す。
+	.sl-heading-wrapper {
+		&.level-h2 {
+			margin-top: var(--space-16);
+			border-bottom: 2px solid var(--brand);
+		}
+		&.level-h3 {
+			margin-top: var(--space-12);
+			padding-left: var(--space-2);
+			border-left: 2px solid var(--brand);
+		}
+		&:is(.level-h4, .level-h5, .level-h6) {
+			margin-top: var(--space-8);
+		}
+		> h2 {
+			border-bottom: none;
+		}
+		> h3 {
+			padding-left: 0;
+			border-left: none;
+		}
+	}
+	> :first-child,
+	> .sl-heading-wrapper:first-child {
+		margin-top: 0;
+	}
+
+	:is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+		font-weight: 700;
+	}
+	h6:not(:where(.not-content *)) {
+		color: var(--dimmed);
+	}
+
+	code:not(:where(.not-content *)) {
+		border-radius: var(--radius-sm);
+	}
+	pre:not(:where(.not-content *)) {
+		border: none;
+		border-radius: var(--radius-md);
+		background: color-mix(in oklab, var(--foreground) 6%, transparent);
+		line-height: 1.6;
+	}
+
+	hr:not(:where(.not-content *)) {
+		margin-block: var(--space-12);
+	}
+
+	table:not(:where(.not-content *)) {
+		line-height: 1.5;
+	}
+	thead th:not(:where(.not-content *)) {
+		border-bottom: 2px solid var(--brand);
+	}
+	:is(th, td):not(:where(.not-content *)) {
+		border-bottom-color: var(--divider);
+	}
+
+	blockquote:not(:where(.not-content *)) {
+		border-inline-start: 2px solid var(--dimmed);
+		color: var(--dimmed);
+	}
+}
+
+// ---------- Aside（Alert 相当） ----------
+.starlight-aside {
+	--sl-color-asides-text-accent: var(--foreground-strong);
+	padding: var(--space-3) var(--space-4);
+	border-inline-start: none;
+	border-radius: var(--radius-md);
+	background-color: color-mix(
+		in oklab,
+		oklch(from var(--lu-alert-color) var(--lu-tint-l) calc(c * 0.3) h) 70%,
+		var(--surface, var(--panel))
+	);
+	color: var(--foreground);
+	font-size: var(--text-ui);
+	line-height: 1.5;
+}
+.starlight-aside--note {
+	--lu-alert-color: var(--dimmed);
+}
+.starlight-aside--tip {
+	--lu-alert-color: var(--success);
+}
+.starlight-aside--caution {
+	--lu-alert-color: var(--warning);
+}
+.starlight-aside--danger {
+	--lu-alert-color: var(--danger);
+}
+.starlight-aside__title {
+	font-size: var(--text-ui);
+	font-weight: 700;
+}
+.starlight-aside__icon {
+	color: var(--lu-alert-color);
+}
+
+// ---------- Badge（Chip 相当） ----------
+.sl-badge {
+	--sl-color-border-badge: transparent;
+	border: none;
+	border-radius: var(--radius-full);
+	font-family: var(--font-sans);
+	font-weight: 600;
+}
+
+// ---------- ページ送り ----------
+.pagination-links a {
+	border: none;
+	border-radius: var(--radius-lg);
+	background: var(--panel);
+	box-shadow: var(--shadow-sm);
+	transition: box-shadow var(--lu-duration-slow) ease-out;
+
+	&:hover {
+		box-shadow: var(--shadow-md);
+	}
+}
+.pagination-links .link-title {
+	font-size: var(--text-h4);
+	font-weight: 700;
+}
+
+// ---------- 印刷 ----------
+@media print {
+	.lu-card {
+		padding: 0;
+		background: none;
+		box-shadow: none;
+		color: inherit;
+	}
+}
+
+// ---------- 記事内の図 ----------
 figure {
-  padding: 1rem;
-  border: 1px solid var(--sl-color-hairline);
-  width: fit-content;
+	padding: var(--space-4);
+	border: 1px solid var(--divider);
+	border-radius: var(--radius-md);
+	width: fit-content;
 }
 
 figcaption {
-  font-size: 0.8rem;
-  &::before {
-    content: "▲ ";
-  }
+	font-size: var(--text-small);
+	&::before {
+		content: "▲ ";
+	}
 }
-

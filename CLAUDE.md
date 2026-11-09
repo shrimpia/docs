@@ -27,9 +27,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Starlight のカスタマイズ
 
-- `Head` / `Footer` を `src/components/` のコンポーネントで上書きしている。
+- `Head` / `Footer` / `MarkdownContent` を `src/components/` のコンポーネントで上書きしている。`MarkdownContent` は本文を Lutica Design System の記事カードで包む。
 - `src/components/PageFrame.astro` はどこからも参照されておらず、現在は使われていない。
-- 全体スタイルは `src/styles/global.scss`（`customCss` で読み込み）。フォントは外部の Koruri CSS を `head` で読み込む。
+- テーマは Lutica Design System を適用している。`src/styles/lutica/` が DS 本体のコピー（`lutica` レイヤーに読み込み）で、`src/styles/global.scss` に Starlight との対応付けを書く。色や大きさは DS のトークンを `var()` で参照し、値を直書きしない。
+- フォントは `https://koruri.shrimpia.network/koruri.css` を `head` で読み込む。
 - `@` は `/src` のエイリアス。MDX からのコンポーネントや画像の読み込みに使う（例: `import Stub from '@/components/stub.md'`）。
 
 ## ドキュメント編集時の約束

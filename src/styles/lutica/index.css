@@ -1,0 +1,8 @@
+/*
+ * Lutica Design System の読み込み口。
+ * Starlight のレイヤーより先に宣言される lutica レイヤーへ入れることで、
+ * bundle.css の要素デフォルトが Starlight の部品を上書きしないようにする。
+ * DS を更新するときは tokens.css と bundle.css を差し替える。
+ */
+@import './tokens.css' layer(lutica);
+@import './bundle.css' layer(lutica);

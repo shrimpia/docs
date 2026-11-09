@@ -33,14 +33,16 @@ export default defineConfig({
 				alt: 'シュリンピア',
 			},
 			customCss: [
+				'@/styles/lutica/index.css',
 				'@/styles/global.scss',
 			],
 			components: {
 				Head: '@/components/Head.astro',
 				Footer: '@/components/Footer.astro',
+				MarkdownContent: '@/components/MarkdownContent.astro',
 			},
 			head: [
-				{ tag: 'link', attrs: { rel: 'stylesheet', href: 'https://koruri.chillout.chat/koruri.css' } },
+				{ tag: 'link', attrs: { rel: 'stylesheet', href: 'https://koruri.shrimpia.network/koruri.css' } },
 			],
 			sidebar: [
 				{
