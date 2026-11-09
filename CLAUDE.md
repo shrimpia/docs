@@ -11,6 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 パッケージマネージャーは pnpm。使用コマンドは @package.json を読むこと。
 
 - `pnpm build` は `astro check && astro build`。型チェックを単体で回すなら `pnpm astro check`。
+- `astro check` は TypeScript 7 に非対応のため、`typescript` は 6 系に固定している。依存更新で 7 に上げない。
 - テストと linter、リンク切れの検出システムは無い。変更の検証は `pnpm build` で行う。
 
 ## 構成
