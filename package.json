@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/starlight": "^0.38.2",
-    "astro": "^6.0.8",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/starlight": "^0.42.10",
+    "astro": "^7.4.7",
     "sass": "^1.80.6",
     "sharp": "^0.32.5",
     "starlight-links-validator": "^0.20.1",
