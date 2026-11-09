@@ -2,3 +2,10 @@ onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
   - sharp
+
+# astro2tsx は @emnapi/runtime を宣言しておらず、@napi-rs/wasm-runtime の peer が
+# 2.0.0-beta.2 に解決されて @emnapi/core 1.11.3 と不一致になり、astro check が起動できない。
+packageExtensions:
+  '@astrojs/astro2tsx':
+    dependencies:
+      '@emnapi/runtime': 1.11.3
