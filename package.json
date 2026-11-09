@@ -13,9 +13,9 @@
     "@astrojs/check": "^0.9.12",
     "@astrojs/starlight": "^0.42.10",
     "astro": "^7.4.7",
-    "sass": "^1.80.6",
-    "sharp": "^0.32.5",
-    "starlight-links-validator": "^0.20.1",
-    "typescript": "^5.6.3"
+    "sass": "^1.108.1",
+    "sharp": "^0.35.5",
+    "starlight-links-validator": "^0.27.0",
+    "typescript": "^7.0.2"
   }
 }
